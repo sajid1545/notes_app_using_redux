@@ -13,7 +13,7 @@ const Navbar = () => {
 						<div className="flex gap-20 text-2xl font-extrabold">
 							<Link to="/">All Notes</Link>
 
-							<Link to="/">Add Notes</Link>
+							<Link to="/add-notes">Add Notes</Link>
 						</div>
 					</ul>
 					<div className="lg:hidden flex justify-end">
@@ -39,7 +39,7 @@ const Navbar = () => {
 											<div className="flex flex-col space-y-10 text-center text-xl font-bold">
 												<Link to="/">All Notes</Link>
 
-												<Link to="/">Add Notes</Link>
+												<Link to="/add-notes">Add Notes</Link>
 											</div>
 										</ul>
 									</nav>

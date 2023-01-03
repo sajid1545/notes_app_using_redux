@@ -1,5 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Home from '../pages/Home';
+import AddNotes from '../features/AddNotes';
+import EditNotes from '../features/EditNotes';
+import NotesView from '../features/NotesView';
 import Main from './../Layouts/Main';
 
 export const router = createBrowserRouter([
@@ -9,7 +11,15 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <Home />,
+				element: <NotesView />,
+			},
+			{
+				path: '/add-notes',
+				element: <AddNotes />,
+			},
+			{
+				path: '/edit-notes',
+				element: <EditNotes />,
 			},
 		],
 	},
