@@ -6,7 +6,7 @@ const initialNoteState = {
 		{
 			id: uuidv4(),
 			title: 'React',
-			author:
+			note:
 				'React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.',
 		},
 		{
