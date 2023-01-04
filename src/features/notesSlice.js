@@ -6,8 +6,7 @@ const initialNoteState = {
 		{
 			id: uuidv4(),
 			title: 'React',
-			note:
-				'React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.',
+			note: 'React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.',
 		},
 		{
 			id: uuidv4(),
@@ -22,8 +21,11 @@ const noteSlice = createSlice({
 	initialState: initialNoteState,
 	reducers: {
 		showNotes: (state) => state,
+		addNote: (state, action) => {
+			state.notes.push(action.payload);
+		},
 	},
 });
 
-export const { showNotes } = noteSlice.actions;
+export const { showNotes, addNote } = noteSlice.actions;
 export default noteSlice.reducer;
