@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 
 const initialNoteState = {
-	books: [
+	notes: [
 		{
 			id: uuidv4(),
 			title: 'React',
