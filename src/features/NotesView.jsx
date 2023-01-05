@@ -1,10 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { FaTrash } from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteNote } from './notesSlice';
 
 const NotesView = () => {
 	const notes = useSelector((state) => state.notesReducer.notes);
+	const dispatch = useDispatch();
+
+	const handleDelete = (id) => {
+		dispatch(deleteNote(id));
+	};
 
 	return (
 		<div>
@@ -23,8 +29,9 @@ const NotesView = () => {
 
 									<p className="mt-4 text-lg text-gray-800">{note}</p>
 								</div>
-								<div className='mt-5 flex justify-end gap-5'>
+								<div className="mt-5 flex justify-end gap-5">
 									<button
+										onClick={() => handleDelete(id)}
 										type="button"
 										className="py-2 px-4 flex justify-center items-center  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  w-12 h-12 rounded-lg ">
 										<FaTrash />

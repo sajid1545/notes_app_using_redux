@@ -24,8 +24,13 @@ const noteSlice = createSlice({
 		addNote: (state, action) => {
 			state.notes.push(action.payload);
 		},
+		deleteNote: (state, action) => {
+			const id = action.payload;
+			const remaining = state.notes.filter((note) => note.id !== id);
+			state.notes = remaining;
+		},
 	},
 });
 
-export const { showNotes, addNote } = noteSlice.actions;
+export const { showNotes, addNote,deleteNote } = noteSlice.actions;
 export default noteSlice.reducer;
